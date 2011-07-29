@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>regexps-test</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen">
+        <script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+        <script>
+            $(document).ready(function(){
+                test("Testing dates", function() {
+                    var RE_DATE = /^\d\d\d\d(-\d\d(-\d\d(T\d\d:\d\d(:\d\d([.]\d\d\d)?)?(Z|([+-]\d\d:\d\d))?)?)?)?$/;
+                    ok(RE_DATE.test("2001"));
+                    ok(RE_DATE.test("2001-04-02T13:33"));
+                    ok(RE_DATE.test("2001-04-02T13:33:59"));
+                    ok(RE_DATE.test("2001-04-02T13:33:59.957"));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1 id="qunit-header">regexps-test</h1>
+        <h2 id="qunit-banner"></h2>
+        <div id="qunit-testrunner-toolbar"></div>
+        <h2 id="qunit-userAgent"></h2>
+        <ol id="qunit-tests"></ol>
+        <div id="qunit-fixture">test markup, will be hidden</div>
+    </body>
+</html>
